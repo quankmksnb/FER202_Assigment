@@ -1,0 +1,40 @@
+.cart-container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+  
+  .cart-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cart-details input {
+    width: 50px;
+    text-align: center;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

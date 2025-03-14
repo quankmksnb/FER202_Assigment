@@ -1,0 +1,402 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 14 Pro",
+      "price": 999,
+      "image": "/ip14.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S23",
+      "price": 850,
+      "image": "/ssglx23.jpg"
+    },
+    {
+      "id": 3,
+      "name": "MacBook Air M2",
+      "price": 1200,
+      "image": "/macbook.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Sony WH-1000XM5",
+      "price": 399,
+      "image": "/sonywh.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Apple Watch Series 9",
+      "price": 450,
+      "image": "/applewatch.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Dell XPS 13",
+      "price": 1300,
+      "image": "/dellXPS.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Levi's Jeans",
+      "price": 75,
+      "image": "/Levijean.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Nike Air Max",
+      "price": 150,
+      "image": "/nike.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Adidas UltraBoost",
+      "price": 180,
+      "image": "/adidas.jpg"
+    },
+    {
+      "id": 10,
+      "name": "The North Face Jacket",
+      "price": 200,
+      "image": "/TNFjacket.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Puma Running Shoes",
+      "price": 130,
+      "image": "/puma.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Rolex Submariner",
+      "price": 8500,
+      "image": "/rolex.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Ray-Ban Sunglasses",
+      "price": 120,
+      "image": "/rayban.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Gucci Handbag",
+      "price": 2500,
+      "image": "/gucci.jpg"
+    },
+    {
+      "id": 15,
+      "name": "iPad Pro M2",
+      "price": 1100,
+      "image": "/ipad.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Bose SoundLink Speaker",
+      "price": 299,
+      "image": "/bose.jpg"
+    },
+    {
+      "id": 17,
+      "name": "LG OLED TV",
+      "price": 2000,
+      "image": "/LG.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Dyson V11 Vacuum Cleaner",
+      "price": 600,
+      "image": "/dyson.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Instant Pot Duo 7-in-1",
+      "price": 100,
+      "image": "/Pot.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Nespresso Coffee Machine",
+      "price": 250,
+      "image": "/coffee.jpg"
+    },
+    {
+      "id": 21,
+      "name": "Canon EOS R5 Camera",
+      "price": 3500,
+      "image": "/canon.jpg"
+    },
+    {
+      "id": 22,
+      "name": "GoPro Hero 11",
+      "price": 499,
+      "image": "/gopro.jpg"
+    },
+    {
+      "id": 23,
+      "name": "Samsung 4K Monitor",
+      "price": 300,
+      "image": "/samsung4k.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Xbox Series X",
+      "price": 500,
+      "image": "/xbox.jpg"
+    },
+    {
+      "id": 25,
+      "name": "PlayStation 5",
+      "price": 550,
+      "image": "/ps5.jpg"
+    },
+    {
+      "id": 26,
+      "name": "Nintendo Switch OLED",
+      "price": 350,
+      "image": "/nintendo.jpg"
+    },
+    {
+      "id": 27,
+      "name": "Fitbit Versa 4",
+      "price": 199,
+      "image": "/fitbit.jpg"
+    },
+    {
+      "id": 28,
+      "name": "Peloton Bike",
+      "price": 1499,
+      "image": "/peleton.jpg"
+    },
+    {
+      "id": 29,
+      "name": "NordicTrack Treadmill",
+      "price": 1800,
+      "image": "/NordicTrack.jpg"
+    },
+    {
+      "id": 30,
+      "name": "Dyson Supersonic Hair Dryer",
+      "price": 400,
+      "image": "/dyson.jpg"
+    }
+  ],
+  "product_categories": [
+    {
+      "product_id": 1,
+      "category_id": 1
+    },
+    {
+      "product_id": 2,
+      "category_id": 1
+    },
+    {
+      "product_id": 3,
+      "category_id": 1
+    },
+    {
+      "product_id": 4,
+      "category_id": 1
+    },
+    {
+      "product_id": 5,
+      "category_id": 1
+    },
+    {
+      "product_id": 6,
+      "category_id": 1
+    },
+    {
+      "product_id": 7,
+      "category_id": 2
+    },
+    {
+      "product_id": 8,
+      "category_id": 2
+    },
+    {
+      "product_id": 9,
+      "category_id": 2
+    },
+    {
+      "product_id": 10,
+      "category_id": 2
+    },
+    {
+      "product_id": 11,
+      "category_id": 2
+    },
+    {
+      "product_id": 12,
+      "category_id": 2
+    },
+    {
+      "product_id": 13,
+      "category_id": 2
+    },
+    {
+      "product_id": 14,
+      "category_id": 2
+    },
+    {
+      "product_id": 15,
+      "category_id": 1
+    },
+    {
+      "product_id": 16,
+      "category_id": 1
+    },
+    {
+      "product_id": 17,
+      "category_id": 1
+    },
+    {
+      "product_id": 18,
+      "category_id": 3
+    },
+    {
+      "product_id": 19,
+      "category_id": 3
+    },
+    {
+      "product_id": 20,
+      "category_id": 3
+    },
+    {
+      "product_id": 21,
+      "category_id": 1
+    },
+    {
+      "product_id": 22,
+      "category_id": 1
+    },
+    {
+      "product_id": 23,
+      "category_id": 1
+    },
+    {
+      "product_id": 24,
+      "category_id": 4
+    },
+    {
+      "product_id": 25,
+      "category_id": 4
+    },
+    {
+      "product_id": 26,
+      "category_id": 4
+    },
+    {
+      "product_id": 27,
+      "category_id": 5
+    },
+    {
+      "product_id": 28,
+      "category_id": 5
+    },
+    {
+      "product_id": 29,
+      "category_id": 5
+    },
+    {
+      "product_id": 30,
+      "category_id": 6
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Electronics"
+    },
+    {
+      "id": 2,
+      "name": "Fashion"
+    },
+    {
+      "id": 3,
+      "name": "Home"
+    },
+    {
+      "id": 4,
+      "name": "Gaming"
+    },
+    {
+      "id": 5,
+      "name": "Health"
+    },
+    {
+      "id": 6,
+      "name": "Beauty"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Nguyen Van A",
+      "email": "nguyenvana@example.com",
+      "password": "hashed_password_1",
+      "address": "Hà Nội, Việt Nam",
+      "phone": "0123456789"
+    },
+    {
+      "id": 2,
+      "name": "Tran Thi B",
+      "email": "tranthib@example.com",
+      "password": "hashed_password_2",
+      "address": "TP.HCM, Việt Nam",
+      "phone": "0987654321"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "product_id": 1,
+      "quantity": 2,
+      "added_at": "2024-03-14T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "product_id": 2,
+      "quantity": 1,
+      "added_at": "2024-03-14T10:45:00Z"
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "product_id": 1,
+      "quantity": 1,
+      "added_at": "2024-03-14T11:00:00Z"
+    }
+  ],
+  "history": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "product_id": 1,
+      "quantity": 2,
+      "total_price": 1998,
+      "purchase_date": "2024-03-14T15:00:00Z",
+      "status": "Completed"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "product_id": 2,
+      "quantity": 1,
+      "total_price": 850,
+      "purchase_date": "2024-03-14T15:05:00Z",
+      "status": "Completed"
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "product_id": 1,
+      "quantity": 1,
+      "total_price": 999,
+      "purchase_date": "2024-03-15T09:30:00Z",
+      "status": "Completed"
+    }
+  ]
+}
