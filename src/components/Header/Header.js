@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./header.css";
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import {
   NotificationsNone,
@@ -34,8 +34,22 @@ const Header = () => {
 
   const { cart } = useContext(CartContext); // Lấy giỏ hàng từ context
   const [open, setOpen] = useState(false); // Kiểm soát dropdown
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Render danh sách sản phẩm trong giỏ hàng
+  useEffect(() => {
+    const user = localStorage.getItem("user"); // Lấy dữ liệu từ localStorage
+    if (user) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    window.location.href = "/login"; // Chuyển hướng đến trang đăng nhập
+  };
+  
+
   // Render danh sách sản phẩm trong giỏ hàng
   const cartItems = (
     <div className="cart-dropdown">
@@ -69,7 +83,16 @@ const Header = () => {
       <div className="header-top">
         <div className="header-top-left">
           <span>
-            Hi! <a href="#" className="auth-link">Sign in</a> or <a href="#" className="auth-link">Register</a>
+            {isLoggedIn ? (
+              <Link onClick={handleLogout}>
+                Logout
+              </Link>
+            ) : (
+              <nav>
+                Hi! <Link to="/login" className="auth-link">Sign in</Link> or
+                <Link to="/register" className="auth-link"> Register</Link>
+              </nav>
+            )}
           </span>
           <ul>
             <li><a href="#">Daily Deals</a></li>
