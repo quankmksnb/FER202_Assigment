@@ -2,8 +2,8 @@
   "products": [
     {
       "id": "1",
-      "name": "iPhone 14 Pro",
-      "price": 999,
+      "name": "iPhone 14 Pro 1TB",
+      "price": "998",
       "image": "/ip14.jpg",
       "description": "iPhone 14 Pro là mẫu flagship cao cấp của Apple, sở hữu thiết kế sang trọng với khung viền thép không gỉ và mặt kính Ceramic Shield siêu bền. Máy được trang bị màn hình Super Retina XDR OLED 6.1 inch với công nghệ ProMotion 120Hz và tính năng Always-On Display. Cụm camera chuyên nghiệp gồm camera chính 48MP, camera góc siêu rộng 12MP và camera tele 12MP hỗ trợ zoom quang học 3x. iPhone 14 Pro sử dụng chip A16 Bionic mạnh mẽ, hỗ trợ 5G và có thời lượng pin lên đến 23 giờ phát video. Máy tích hợp tính năng Dynamic Island thông minh, Face ID bảo mật cao và hỗ trợ quay video Cinematic Mode 4K.",
       "salerId": 2
@@ -430,7 +430,7 @@
     },
     {
       "id": "2",
-      "name": "Tran Thi B",
+      "name": "Shop ABC",
       "email": "tranthib@example.com",
       "password": "hashed_password_2",
       "address": "TP.HCM, Việt Nam",
@@ -438,7 +438,7 @@
     },
     {
       "id": "3",
-      "name": "Le Van C",
+      "name": "Chị Em Rọt",
       "email": "levanc@example.com",
       "password": "hashed_password_3",
       "address": "Đà Nẵng, Việt Nam",
@@ -446,22 +446,22 @@
     },
     {
       "id": "4",
-      "name": "Pham Thi D",
+      "name": "Mixi Shop",
       "email": "quankmksnb2@gmail.com",
-      "password": "12345",
+      "password": "1234567",
       "address": "Cần Thơ, Việt Nam",
       "phone": "0934567890"
     },
     {
       "id": "5",
       "name": "Hoang Van E",
-      "email": "quankmksnb1@gmail.com",
+      "email": "doanhuy2004@gmail.com",
       "password": "12345",
       "address": "Hải Phòng, Việt Nam",
       "phone": "0975123456"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Nguyễn Minh Quân",
       "email": "quankmksnb@gmail.com",
       "password": "12345",
@@ -541,11 +541,25 @@
       "added_at": "2024-03-14T10:45:00Z"
     },
     {
-      "id": "3",
-      "user_id": 2,
-      "product_id": 1,
+      "id": "123b",
+      "user_id": "5",
+      "product_id": "2",
       "quantity": 1,
-      "added_at": "2024-03-14T11:00:00Z"
+      "added_at": "2025-03-24T11:53:49.121Z"
+    },
+    {
+      "id": "6938",
+      "user_id": "5",
+      "product_id": "5",
+      "quantity": 4,
+      "added_at": "2025-03-24T15:52:41.015Z"
+    },
+    {
+      "id": "9251",
+      "user_id": "5",
+      "product_id": "7",
+      "quantity": 1,
+      "added_at": "2025-03-24T16:25:32.881Z"
     }
   ],
   "history": [

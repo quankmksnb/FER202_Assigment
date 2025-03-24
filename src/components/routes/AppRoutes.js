@@ -13,19 +13,28 @@ import Register from "../login_signup/Register";
 import ProductDetail from "../product/ProductDetail";
 import AddProduct from "../product/AddProduct";
 import ProductList from "../product/ProductList";
+import ProductOfSaler from "../product/ProductOfSaler";
+import MyShopProduct from "../product/MyShopProduct";
 
 const AppRoutes = () => {
   const location = useLocation();
   const { searchText } = useContext(ProductContext); // Lấy searchText từ context
+  
   const isAuthPage = location.pathname === "/login" || location.pathname === "/register";
   const isProductDetailPage = location.pathname.startsWith("/product/");
   const isCategoryPage = location.pathname.startsWith("/category/");
+  const isSpecialPage = 
+    location.pathname.startsWith("/myshopproduct/") || 
+    location.pathname.startsWith("/productofsaler/") || 
+    location.pathname === "/productlist";
 
   return (
     <>
       {!isAuthPage && <Header />}
 
       <Routes>
+        <Route path="/myshopproduct/:id" element={<MyShopProduct />} />
+        <Route path="/productofsaler/:id" element={<ProductOfSaler />} />
         <Route path="/add-product" element={<AddProduct />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/category/:categoryId" element={<CategoryProducts />} />
@@ -39,11 +48,11 @@ const AppRoutes = () => {
         <ProductList />
       )}
 
-      {!isAuthPage && !isProductDetailPage && (
+      {!isAuthPage && !isProductDetailPage && !isSpecialPage && (
         <>
-          {!isCategoryPage && <Slider />}
-          {!isCategoryPage && <Category />}
-          {!isCategoryPage && <MainCarousel />}
+          <Slider />
+          <Category />
+          <MainCarousel />
         </>
       )}
 

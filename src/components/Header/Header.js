@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./header.css";
+import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { ProductContext } from "../../context/ProductContext";
@@ -11,6 +12,7 @@ import {
 } from "@mui/icons-material";
 import { Dropdown, Badge, Button } from "antd";
 import CategoryList from "../Category/CategoryList";
+import SalerList from "../saler/SalerList";
 
 const NAV_LINKS = ["Ship to", "Sell", "Watchlist", "My eBay"];
 
@@ -35,6 +37,7 @@ const Header = () => {
   const [open, setOpen] = useState(false); // Kiểm soát dropdown
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userRole, setUserRole] = useState(null); // Thêm state để lưu role của user
+  const { setSearchText } = useContext(ProductContext);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user"); // Lấy dữ liệu từ localStorage
@@ -59,10 +62,10 @@ const Header = () => {
         <>
           {cart.map((item) => (
             <div key={item.id} className="cart-dropdown-item">
-              <img src={item.image} alt={item.name} className="cart-item-image" />
+              <img src={item.product.image} alt={item.product.name} className="cart-item-image" />
               <div className="cart-item-info">
-                <p className="cart-item-name">{item.name}</p>
-                <p className="cart-item-price">{item.price} $</p>
+                <p className="cart-item-name">{item.product.name}</p>
+                <p className="cart-item-price">{item.product.price} $</p>
                 <p className="cart-item-quantity">Số lượng: {item.quantity}</p>
               </div>
             </div>
@@ -76,6 +79,7 @@ const Header = () => {
       ) : (
         <p className="cart-empty">Giỏ hàng trống</p>
       )}
+
     </div>
   );
 
@@ -107,19 +111,7 @@ const Header = () => {
       );
     } else {
       return (
-        <Button
-          type="default"
-          size="large"
-          style={{
-            borderRadius: 30,
-            fontWeight: "bold",
-            backgroundColor: "#f0f0f0",
-            color: "#1890ff",
-            textAlign: "center"
-          }}
-        >
-          Advanced
-        </Button>
+        <div style={{ width: "12%", paddingBottom: "20px" }}></div>
       );
     }
   };
@@ -188,17 +180,19 @@ const Header = () => {
           </div>
         </div>
         <div className="search-bar">
-          <input placeholder="Search for anything" type="text" />
-          <div className="search-category">
-            <span>All Categories</span>
-            <ExpandMoreOutlined />
-          </div>
+          <input
+            placeholder="Search for anything"
+            type="text"
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
           <button className="search-button">Search</button>
         </div>
         {/* Hiển thị nút Button thay vì liên kết */}
         {renderRoleLink()}
       </div>
-
+      
       <nav className="header-bottom">
         <ul>
           {MENU_ITEMS.map((item, index) => (
@@ -210,6 +204,9 @@ const Header = () => {
           ))}
         </ul>
       </nav>
+      <Row>
+        <SalerList />
+      </Row>
     </header>
   );
 };
