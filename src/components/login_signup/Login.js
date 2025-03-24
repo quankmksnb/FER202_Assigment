@@ -1,101 +1,139 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Button, Checkbox, Form, Input, message, Row, Col, Card } from "antd";
 import { useNavigate } from "react-router-dom";
-import { Form, Input, Button, Card, Typography, message } from "antd";
-
-const { Title, Text } = Typography;
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (values) => {
+  const onFinish = async (values) => {
     setLoading(true);
     try {
       const response = await fetch("http://localhost:9999/users");
       const users = await response.json();
 
-      const user = users.find(
-        (u) => u.email === values.email && u.password === values.password
-      );
+      // Kiểm tra nếu không có email trong cơ sở dữ liệu
+      const user = users.find((u) => u.email === values.email);
 
-      if (user) {
-        // 🔹 Bước 1: Lấy danh sách roleId từ user_roles
-        const roleUserResponse = await fetch(`http://localhost:9999/user_roles?user_id=${user.id}`);
-        const userRoles = await roleUserResponse.json();
-        console.log("User Roles:", userRoles);
+      // Kiểm tra email không tồn tại
+      if (!user) {
+        message.error("Email không tồn tại trong hệ thống!");
+        setLoading(false); // Đặt loading về false sau khi thông báo lỗi
+        return;
+      }
 
-        if (userRoles.length > 0) {
-          const roleIds = userRoles.map((ur) => String(ur.role_id)); // Sửa roleId thành role_id
-          console.log("User Role IDs:", roleIds);
+      // Kiểm tra mật khẩu của người dùng
+      if (user.password !== values.password) {
+        message.error("Sai mật khẩu!");
+        setLoading(false); // Đặt loading về false sau khi thông báo lỗi
+        return;
+      }
 
-          // 🔹 Bước 2: Lấy danh sách roles
-          const roleResponse = await fetch(`http://localhost:9999/roles`);
-          const roles = await roleResponse.json();
-          console.log("All Roles:", roles);
+      // Lấy danh sách quyền người dùng
+      const roleUserResponse = await fetch(`http://localhost:9999/user_roles?user_id=${user.id}`);
+      const userRoles = await roleUserResponse.json();
 
-          // 🔹 Bước 3: Lọc danh sách role name
-          const userRolesNames = roles
-            .filter((role) => roleIds.includes(role.id))
-            .map((role) => role.name);
+      if (userRoles.length > 0) {
+        const roleIds = userRoles.map((ur) => String(ur.role_id));
 
-          console.log("User Role Names:", userRolesNames);
+        const roleResponse = await fetch(`http://localhost:9999/roles`);
+        const roles = await roleResponse.json();
 
-          // 🔹 Bước 4: Lưu vào localStorage
-          const userData = { ...user, roles: userRolesNames };
-          localStorage.setItem("user", JSON.stringify(userData));
+        const userRolesNames = roles.filter((role) => roleIds.includes(role.id)).map((role) => role.name);
 
-          message.success("Đăng nhập thành công!");
-          navigate("/");
-        } else {
-          message.error("Không tìm thấy quyền người dùng!");
-        }
+        const userData = { ...user, roles: userRolesNames };
+        localStorage.setItem("user", JSON.stringify(userData));
+
+        message.success("Đăng nhập thành công!");
+        navigate("/"); // Chuyển đến trang chủ
       } else {
-        message.error("Email hoặc mật khẩu không đúng!");
+        message.error("Không tìm thấy quyền người dùng!");
       }
     } catch (error) {
       console.error("Error:", error);
       message.error("Lỗi khi đăng nhập!");
     }
-    setLoading(false);
+    setLoading(false); // Đảm bảo loading luôn được tắt sau khi kết thúc
   };
 
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
 
   return (
     <div style={styles.container}>
-      <Card style={styles.card}>
-        <Title level={2} style={{ textAlign: "center" }}>Đăng Nhập</Title>
-        <Form layout="vertical" onFinish={handleLogin}>
-          <Form.Item
-            label="Email"
-            name="email"
-            rules={[
-              { required: true, message: "Vui lòng nhập email!" },
-              { type: "email", message: "Email không hợp lệ!" }
-            ]}
+      <Row justify="center" align="middle" style={{ width: "100%", height: "100%" }}>
+        <Col xs={24} sm={12} md={8}>
+          <Card
+            title="Đăng Nhập"
+            bordered={false}
+            style={{
+              borderRadius: 10,
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+            }}
           >
-            <Input placeholder="Nhập email" />
-          </Form.Item>
+            <Form
+              name="login"
+              labelCol={{ span: 24 }}
+              wrapperCol={{ span: 24 }}
+              initialValues={{ remember: true }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
+            >
+              {/* Email */}
+              <Form.Item
+                label="Email"
+                name="email"
+                rules={[
+                  { required: true, message: "Vui lòng nhập email!" },
+                  { type: "email", message: "Email không hợp lệ!" },
+                ]}
+              >
+                <Input placeholder="Nhập email" size="large" />
+              </Form.Item>
 
-          <Form.Item
-            label="Mật khẩu"
-            name="password"
-            rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
-          >
-            <Input.Password placeholder="Nhập mật khẩu" />
-          </Form.Item>
+              {/* Password */}
+              <Form.Item
+                label="Mật khẩu"
+                name="password"
+                rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
+              >
+                <Input.Password placeholder="Nhập mật khẩu" size="large" />
+              </Form.Item>
 
-          <Form.Item>
-            <Button type="primary" htmlType="submit" block loading={loading}>
-              Đăng nhập
-            </Button>
-          </Form.Item>
-        </Form>
+              {/* Submit Button */}
+              <Form.Item>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  block
+                  loading={loading}
+                  size="large"
+                  style={{
+                    borderRadius: 30,
+                    backgroundColor: "#1890ff",
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Đăng nhập
+                </Button>
+              </Form.Item>
 
-        <Text style={{ textAlign: "center", display: "block" }}>
-          Chưa có tài khoản?{" "}
-          <a href="/register" style={{ color: "#1890ff" }}>Đăng ký ngay</a>
-        </Text>
-      </Card>
+              {/* Link to Register */}
+              <Form.Item>
+                <p style={{ textAlign: "center" }}>
+                  Chưa có tài khoản?{" "}
+                  <a href="/register" style={{ color: "#1890ff" }}>
+                    Đăng ký ngay
+                  </a>
+                </p>
+              </Form.Item>
+            </Form>
+          </Card>
+        </Col>
+      </Row>
     </div>
   );
 };
@@ -107,12 +145,6 @@ const styles = {
     alignItems: "center",
     height: "100vh",
     background: "#f5f5f5",
-  },
-  card: {
-    width: 400,
-    padding: 20,
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-    borderRadius: 8,
   },
 };
 
