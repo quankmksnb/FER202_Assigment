@@ -5,25 +5,24 @@ export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
-    axios.get("http://localhost:9999/products") // API hoặc file JSON
-      .then((response) => {
-        setProducts(response.data.products);
-        setFilteredProducts(response.data.products);
-        const uniqueCategories = ["all", ...new Set(response.data.products.map((p) => p.category))];
-        setCategories(uniqueCategories);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch("http://localhost:9999/products");
+        const data = await response.json();
+        setProducts(Array.isArray(data) ? data : data.products);
+      } catch (error) {
+        console.error("Lỗi khi lấy danh mục:", error);
+      }
+    };
+
+    fetchCategories();
   }, []);
 
-
   return (
-    <ProductContext.Provider value={{ filteredProducts, categories, selectedCategory, products, setProducts }}>
+    <ProductContext.Provider value={{ products, setProducts,searchText, setSearchText }}>
       {children}
     </ProductContext.Provider>
   );

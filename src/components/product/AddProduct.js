@@ -3,7 +3,7 @@ import { ProductContext } from "../../context/ProductContext";
 import axios from "axios";
 
 const AddProduct = () => {
-  const { products, setProducts, categories } = useContext(ProductContext);
+  const { products, setProducts } = useContext(ProductContext);
 
   const [newProduct, setNewProduct] = useState({
     name: "",

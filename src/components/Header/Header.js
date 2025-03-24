@@ -13,6 +13,7 @@ import { Dropdown, Badge, Button } from "antd";
 import CategoryList from "../Category/CategoryList";
 
 
+
 const NAV_LINKS = ["Ship to", "Sell", "Watchlist", "My eBay"];
 
 const MENU_ITEMS = [
@@ -36,7 +37,7 @@ const Header = () => {
   const { cart } = useContext(CartContext); // Lấy giỏ hàng từ context
   const [open, setOpen] = useState(false); // Kiểm soát dropdown
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const { searchText, setSearchText } = useContext(ProductContext);
   useEffect(() => {
     const user = localStorage.getItem("user"); // Lấy dữ liệu từ localStorage
     if (user) {
@@ -50,7 +51,6 @@ const Header = () => {
     setIsLoggedIn(false);
     window.location.href = "/login"; // Chuyển hướng đến trang đăng nhập
   };
-
 
   // Render danh sách sản phẩm trong giỏ hàng
   const cartItems = (
@@ -146,16 +146,19 @@ const Header = () => {
           </div>
         </div>
         <div className="search-bar">
-          <input placeholder="Search for anything" type="text" 
-          value={searchTerm}
-          onChange={handleSearchChange}/>
-          <div className="search-category">
-            <span>All Categories</span>
-            <ExpandMoreOutlined />
-          </div>
-          <button className="search-button">Search</button>
+          <input
+            placeholder="Search ..."
+            type="text"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)} // Cập nhật trực tiếp searchText
+          />
+          <button className="search-button">
+            Search
+          </button>
         </div>
-        {user?.roles?.includes("admin") ? (
+
+
+        {user?.roles?.includes("saler") ? (
           <Link to="/add-product" className="admin-link">
             Add Product
           </Link>
