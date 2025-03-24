@@ -12,8 +12,6 @@ import {
 import { Dropdown, Badge, Button } from "antd";
 import CategoryList from "../Category/CategoryList";
 
-
-
 const NAV_LINKS = ["Ship to", "Sell", "Watchlist", "My eBay"];
 
 const MENU_ITEMS = [
@@ -31,18 +29,20 @@ const MENU_ITEMS = [
 ];
 
 const Header = () => {
-
   const [showCategories, setShowCategories] = useState(false);
   const [user, setUser] = useState(null);
   const { cart } = useContext(CartContext); // Lấy giỏ hàng từ context
   const [open, setOpen] = useState(false); // Kiểm soát dropdown
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const { searchText, setSearchText } = useContext(ProductContext);
+  const [userRole, setUserRole] = useState(null); // Thêm state để lưu role của user
+
   useEffect(() => {
-    const user = localStorage.getItem("user"); // Lấy dữ liệu từ localStorage
-    if (user) {
+    const storedUser = localStorage.getItem("user"); // Lấy dữ liệu từ localStorage
+    if (storedUser) {
       setIsLoggedIn(true);
-      setUser(JSON.parse(user));
+      const userData = JSON.parse(storedUser);
+      setUser(userData);
+      setUserRole(userData?.roles?.[0]); // Giả sử mỗi user có 1 role
     }
   }, []);
 
@@ -79,6 +79,50 @@ const Header = () => {
     </div>
   );
 
+  // Render tùy thuộc vào quyền của người dùng
+  const renderRoleLink = () => {
+    if (userRole === "admin") {
+      return (
+        <Button
+          type="primary"
+          size="large"
+          style={{ borderRadius: 30, fontWeight: "bold" }}
+        >
+          <Link to="/create-account" style={{ color: "white" }}>
+            Create Account
+          </Link>
+        </Button>
+      );
+    } else if (userRole === "saler") {
+      return (
+        <Button
+          type="primary"
+          size="large"
+          style={{ borderRadius: 30, fontWeight: "bold" }}
+        >
+          <Link to="/add-product" style={{ color: "white" }}>
+            Add Product
+          </Link>
+        </Button>
+      );
+    } else {
+      return (
+        <Button
+          type="default"
+          size="large"
+          style={{
+            borderRadius: 30,
+            fontWeight: "bold",
+            backgroundColor: "#f0f0f0",
+            color: "#1890ff",
+            textAlign: "center"
+          }}
+        >
+          Advanced
+        </Button>
+      );
+    }
+  };
 
   return (
     <header className="header">
@@ -86,9 +130,7 @@ const Header = () => {
         <div className="header-top-left">
           <span>
             {isLoggedIn ? (
-              <Link onClick={handleLogout}>
-                Logout
-              </Link>
+              <Link onClick={handleLogout}>Logout</Link>
             ) : (
               <nav>
                 Hi! <Link to="/login" className="auth-link">Sign in</Link> or
@@ -146,25 +188,15 @@ const Header = () => {
           </div>
         </div>
         <div className="search-bar">
-          <input
-            placeholder="Search ..."
-            type="text"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)} // Cập nhật trực tiếp searchText
-          />
-          <button className="search-button">
-            Search
-          </button>
+          <input placeholder="Search for anything" type="text" />
+          <div className="search-category">
+            <span>All Categories</span>
+            <ExpandMoreOutlined />
+          </div>
+          <button className="search-button">Search</button>
         </div>
-
-
-        {user?.roles?.includes("saler") ? (
-          <Link to="/add-product" className="admin-link">
-            Add Product
-          </Link>
-        ) : (
-          <a href="#" className="advanced-search">Advanced</a>
-        )}
+        {/* Hiển thị nút Button thay vì liên kết */}
+        {renderRoleLink()}
       </div>
 
       <nav className="header-bottom">
