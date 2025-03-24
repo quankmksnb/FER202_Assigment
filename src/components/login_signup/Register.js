@@ -10,14 +10,13 @@ const Register = () => {
 
   const handleRegister = async (values) => {
     setLoading(true);
-
+  
     try {
       const response = await fetch("http://localhost:9999/users");
       if (!response.ok) throw new Error("Không thể lấy danh sách người dùng!");
-
+  
       const users = await response.json();
-      console.log("Users từ database:", users); // Debug
-
+  
       // Kiểm tra email đã tồn tại chưa
       const existingUser = users.find((u) => u.email === values.email);
       if (existingUser) {
@@ -25,38 +24,57 @@ const Register = () => {
         setLoading(false);
         return;
       }
-
+  
       // Dữ liệu user mới
       const newUser = {
-        id: users.length + 1,
+        id: users.length + 1, // ID tạm thời, backend có thể xử lý lại
         name: values.name,
         email: values.email,
         password: values.password,
         address: values.address,
         phone: values.phone,
-        role: "web-user",
       };
-
-      console.log("Dữ liệu sẽ gửi đi:", newUser); // Debug
-
+  
       // Gửi request POST để thêm user mới
       const postResponse = await fetch("http://localhost:9999/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
       });
-
+  
       if (!postResponse.ok) throw new Error("Lỗi khi thêm người dùng!");
-
+  
+      // Lấy thông tin user vừa tạo từ phản hồi
+      const createdUser = await postResponse.json();
+  
+      // Dữ liệu user_roles
+      const userRole = {
+        user_id: createdUser.id, // ID user vừa tạo
+        role_id: 2, // Role mặc định là 2
+        id: crypto.randomUUID(), // Tạo id ngẫu nhiên
+      };
+  
+      console.log("Dữ liệu user_roles gửi đi:", userRole); // Debug
+  
+      // Gửi request POST để thêm role cho user mới
+      const roleResponse = await fetch("http://localhost:9999/user_roles", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userRole),
+      });
+  
+      if (!roleResponse.ok) throw new Error("Lỗi khi gán quyền cho người dùng!");
+  
       message.success("Đăng ký thành công! Đang chuyển hướng...");
       setTimeout(() => navigate("/login"), 1500);
     } catch (error) {
       console.error("Lỗi:", error);
       message.error(`Lỗi: ${error.message}`);
     }
-
+  
     setLoading(false);
   };
+  
 
   return (
     <div style={styles.container}>

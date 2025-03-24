@@ -8,29 +8,36 @@ import CategoryProducts from "../Category/CategoryProducts";
 import CartPage from "../pages/CartPage";
 import Login from "../login_signup/Login";
 import Register from "../login_signup/Register";
+import ProductDetail from "../product/ProductDetail";
+import AddProduct from "../product/AddProduct";
 
 const AppRoutes = () => {
   const location = useLocation();
   const isAuthPage = location.pathname === "/login" || location.pathname === "/register";
+  const isProductDetailPage = location.pathname.startsWith("/product/");
+
   return (
     <>
       {!isAuthPage && <Header />}
 
       <Routes>
+        <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/category/:categoryId" element={<CategoryProducts />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
 
-      {!isAuthPage && (
+      {!isAuthPage && !isProductDetailPage && (
         <>
           <Slider />
           <Category />
           <MainCarousel />
-          <Footer />
         </>
       )}
+
+      {!isAuthPage && <Footer />}
     </>
   );
 };

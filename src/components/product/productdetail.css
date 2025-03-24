@@ -1,0 +1,11 @@
+.btn-md {
+    font-size: 0.9rem; /* Nhỏ hơn nhưng vẫn rõ */
+    padding: 8px 16px; /* Thu gọn */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-md:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  

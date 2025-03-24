@@ -44,6 +44,7 @@ const CartPage = () => {
     {
       title: "Hành động",
       key: "action",
+
       render: (_, record) => (
         <Button danger onClick={() => removeFromCart(record.id)}>
           Xóa

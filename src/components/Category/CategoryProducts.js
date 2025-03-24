@@ -13,7 +13,7 @@ const CategoryProducts = () => {
         setSelectedCategory(parseInt(categoryId));
     }, [categoryId, setSelectedCategory]);
 
-    const category = categories.find(cat => cat.id === parseInt(categoryId));
+    const category = categories.find(cat => cat.id == parseInt(categoryId));
 
     return (
         <div className="category-container">

@@ -4,181 +4,211 @@
       "id": "1",
       "name": "iPhone 14 Pro",
       "price": 999,
-      "image": "/ip14.jpg"
+      "image": "/ip14.jpg",
+      "description": "iPhone 14 Pro là mẫu flagship cao cấp của Apple, sở hữu thiết kế sang trọng với khung viền thép không gỉ và mặt kính Ceramic Shield siêu bền. Máy được trang bị màn hình Super Retina XDR OLED 6.1 inch với công nghệ ProMotion 120Hz và tính năng Always-On Display. Cụm camera chuyên nghiệp gồm camera chính 48MP, camera góc siêu rộng 12MP và camera tele 12MP hỗ trợ zoom quang học 3x. iPhone 14 Pro sử dụng chip A16 Bionic mạnh mẽ, hỗ trợ 5G và có thời lượng pin lên đến 23 giờ phát video. Máy tích hợp tính năng Dynamic Island thông minh, Face ID bảo mật cao và hỗ trợ quay video Cinematic Mode 4K."
     },
     {
       "id": "2",
       "name": "Samsung Galaxy S23",
       "price": 850,
-      "image": "/ssglx23.jpg"
+      "image": "/ssglx23.jpg",
+      "description": "Samsung Galaxy S23 là dòng smartphone cao cấp với thiết kế nhỏ gọn, khung viền Armor Aluminum chắc chắn và mặt kính Gorilla Glass Victus 2 bền bỉ. Máy sở hữu màn hình Dynamic AMOLED 6.1 inch, độ phân giải Full HD+, tần số quét 120Hz cho trải nghiệm mượt mà. Camera chính 50MP hỗ trợ chống rung quang học OIS, camera góc siêu rộng 12MP và camera tele 10MP zoom quang học 3x giúp chụp ảnh sắc nét trong mọi điều kiện. Hiệu năng mạnh mẽ với vi xử lý Snapdragon 8 Gen 2, hỗ trợ 5G và RAM 8GB. Máy có viên pin 3900mAh, hỗ trợ sạc nhanh 25W và sạc không dây 15W. Tính năng nổi bật gồm chế độ chụp đêm Nightography, quay video 8K, bảo mật vân tay siêu âm dưới màn hình và chuẩn kháng nước IP68."
     },
     {
       "id": "3",
       "name": "MacBook Air M2",
       "price": 1200,
-      "image": "/macbook.jpg"
+      "image": "/macbook.jpg",
+      "description": "MacBook Air M2 là dòng laptop siêu mỏng nhẹ của Apple, được trang bị chip Apple M2 mạnh mẽ với CPU 8 nhân và GPU lên đến 10 nhân, mang lại hiệu suất vượt trội. Máy có màn hình Liquid Retina 13.6 inch với độ sáng 500 nits, hỗ trợ gam màu P3 và công nghệ True Tone. Thiết kế hoàn toàn mới với thân nhôm nguyên khối siêu nhẹ chỉ 1.24 kg. Pin cho thời gian sử dụng lên đến 18 giờ, hỗ trợ sạc nhanh MagSafe. Bàn phím Magic Keyboard có Touch ID giúp bảo mật tiện lợi, hệ thống loa 4 loa hỗ trợ Spatial Audio cho trải nghiệm âm thanh sống động."
     },
     {
       "id": "4",
       "name": "Sony WH-1000XM5",
       "price": 399,
-      "image": "/sonywh.jpg"
+      "image": "/sonywh.jpg",
+      "description": "Sony WH-1000XM5 là tai nghe chống ồn hàng đầu với công nghệ chống ồn chủ động Adaptive Noise Canceling được cải tiến, mang lại trải nghiệm âm thanh yên tĩnh tuyệt đối. Hệ thống driver 30mm mới giúp tái tạo âm thanh chi tiết, mạnh mẽ với âm trầm sâu lắng. Hỗ trợ kết nối Bluetooth 5.2, LDAC, AAC và SBC cho chất lượng âm thanh không dây vượt trội. Tích hợp trợ lý ảo Google Assistant và Alexa. Thời lượng pin lên đến 30 giờ, hỗ trợ sạc nhanh 3 phút cho 3 giờ sử dụng. Thiết kế nhẹ, thoải mái với đệm tai mềm mại giúp đeo cả ngày không bị mỏi."
     },
     {
       "id": "5",
       "name": "Apple Watch Series 9",
       "price": 450,
-      "image": "/applewatch.jpg"
+      "image": "/applewatch.jpg",
+      "description": "Apple Watch Series 9 mang đến hiệu suất mạnh mẽ với chip S9 SiP, giúp xử lý nhanh hơn và tiết kiệm năng lượng. Màn hình Retina Always-On sáng hơn 2000 nits, hiển thị rõ ràng ngay cả dưới ánh nắng. Hỗ trợ tính năng đo nhịp tim, theo dõi giấc ngủ, đo nồng độ oxy trong máu (SpO2) và phát hiện tai nạn ô tô. Tích hợp Siri xử lý trực tiếp trên thiết bị, giúp phản hồi nhanh hơn. Dung lượng pin lên đến 18 giờ, hỗ trợ sạc nhanh qua cổng USB-C. Tích hợp ứng dụng Workout với hơn 90 chế độ tập luyện và hỗ trợ kết nối với Fitness+."
     },
     {
       "id": "6",
       "name": "Dell XPS 13",
       "price": 1300,
-      "image": "/dellXPS.jpg"
+      "image": "/dellXPS.jpg",
+      "description": "Dell XPS 13 là mẫu ultrabook cao cấp với thiết kế mỏng nhẹ chỉ 1.2 kg, khung nhôm nguyên khối và màn hình InfinityEdge 13.4 inch độ phân giải Full HD+ hoặc 4K UHD+, hỗ trợ Dolby Vision. Cấu hình mạnh mẽ với vi xử lý Intel Core i7 thế hệ 13, RAM lên đến 32GB LPDDR5 và SSD NVMe 1TB tốc độ cao. Hệ thống bàn phím edge-to-edge cải tiến, touchpad lớn giúp thao tác thoải mái hơn. Hỗ trợ cổng Thunderbolt 4, Wi-Fi 6E, bảo mật vân tay tích hợp trên nút nguồn. Pin bền bỉ lên đến 14 giờ, thích hợp cho công việc di động và sáng tạo nội dung."
     },
     {
       "id": "7",
       "name": "Levi's Jeans",
       "price": 75,
-      "image": "/Levijean.jpg"
+      "image": "/Levijean.jpg",
+      "description": "Levi Strauss & Co. (LEE-vy STROWSS) là một công ty trang phục của Mỹ được biết đến trên toàn thế giới với thương hiệu quần jean denim Levi's (LEE-vyze). Nó được thành lập vào tháng 5 năm 1853[9] khi Levi Strauss, một người Đức gốc Do Thái chuyển từ Buttenheim, Bavaria, tới San Francisco, California, để mở chi nhánh Bờ Tây của công ty kinh doanh hàng khô ở New York của anh trai mình."
     },
     {
       "id": "8",
       "name": "Nike Air Max",
       "price": 150,
-      "image": "/nike.jpg"
+      "image": "/nike.jpg",
+      "description": "Nike Air Max là dòng giày thể thao mang tính biểu tượng của Nike, nổi bật với công nghệ Air Cushioning giúp hấp thụ chấn động và tăng cường độ êm ái. Thiết kế hiện đại, năng động với phần upper làm từ vải lưới thoáng khí, đế cao su bám đường tốt. Phù hợp cho cả hoạt động thể thao và phong cách thời trang hàng ngày."
     },
     {
       "id": "9",
       "name": "Adidas UltraBoost",
       "price": 180,
-      "image": "/adidas.jpg"
+      "image": "/adidas.jpg",
+      "description": "Adidas UltraBoost là dòng giày chạy bộ cao cấp của Adidas, được trang bị đế Boost mang lại độ đàn hồi và phản hồi lực tối ưu. Phần upper Primeknit ôm chân hoàn hảo, giúp giảm áp lực khi vận động. Đế ngoài Stretchweb kết hợp với Continental Rubber tăng độ bám đường và độ bền cao, giúp bạn di chuyển linh hoạt trên mọi địa hình."
     },
     {
       "id": "10",
       "name": "The North Face Jacket",
       "price": 200,
-      "image": "/TNFjacket.jpg"
+      "image": "/TNFjacket.jpg",
+      "description": "The North Face Jacket là áo khoác chuyên dụng cho thời tiết lạnh, thiết kế chống nước và chống gió với chất liệu vải Gore-Tex cao cấp. Lớp lót lông cừu giúp giữ ấm hiệu quả, phù hợp cho các hoạt động dã ngoại, leo núi và du lịch mùa đông. Áo có nhiều túi tiện lợi, khóa kéo bền bỉ và kiểu dáng thể thao hiện đại."
     },
     {
       "id": "11",
       "name": "Puma Running Shoes",
       "price": 130,
-      "image": "/puma.jpg"
+      "image": "/puma.jpg",
+      "description": "Puma Running Shoes là đôi giày chạy bộ nhẹ và thoải mái, thiết kế với công nghệ EVA midsole giúp giảm trọng lượng và tăng cường độ êm ái. Phần upper vải lưới thoáng khí, giúp chân luôn khô ráo trong suốt quá trình vận động. Đế ngoài cao su tăng độ bám và chống trơn trượt, phù hợp cho cả chạy bộ và tập luyện hàng ngày."
     },
     {
       "id": "12",
       "name": "Rolex Submariner",
       "price": 8500,
-      "image": "/rolex.jpg"
+      "image": "/rolex.jpg",
+      "description": "It was one of our very first Professional watches and has become the archetype of tool watches dedicated to diving. The Oyster Perpetual Submariner was, at its launch in 1953, the first divers’ wristwatch to be waterproof to 100 metres (330 feet). Today, at the forefront of watchmaking technology, the Submariner and the Submariner Date are equipped with features that ensure their reliability and trustworthiness as diving instruments"
     },
     {
       "id": "13",
       "name": "Ray-Ban Sunglasses",
       "price": 120,
-      "image": "/rayban.jpg"
+      "image": "/rayban.jpg",
+      "description": "Kính mát Ray-Ban là lựa chọn hoàn hảo cho phong cách thời trang và bảo vệ mắt khỏi tia UV. Thiết kế kính cổ điển, gọng kim loại bền bỉ, tròng kính phân cực giúp giảm chói và tăng độ rõ nét. Phù hợp cho cả nam và nữ, thích hợp khi lái xe, đi biển hoặc sử dụng hàng ngày."
     },
     {
       "id": "14",
       "name": "Gucci Handbag",
       "price": 2500,
-      "image": "/gucci.jpg"
+      "image": "/gucci.jpg",
+      "description": "Túi xách Gucci là biểu tượng của sự sang trọng và đẳng cấp, được làm từ da thật cao cấp với họa tiết monogram đặc trưng. Thiết kế tinh tế với ngăn chứa rộng rãi, phù hợp cho cả công việc và các sự kiện quan trọng. Phụ kiện hoàn hảo để tôn lên phong cách thời trang cao cấp."
     },
     {
       "id": "15",
       "name": "iPad Pro M2",
       "price": 1100,
-      "image": "/ipad.jpg"
+      "image": "/ipad.jpg",
+      "description": "iPad Pro M2 là máy tính bảng mạnh mẽ với chip Apple M2 mang lại hiệu suất vượt trội. Màn hình Liquid Retina XDR 12.9 inch sắc nét, hỗ trợ Apple Pencil thế hệ 2. Camera chuyên nghiệp với công nghệ LiDAR giúp tăng cường trải nghiệm AR. Phù hợp cho dân thiết kế, sáng tạo nội dung và công việc di động."
     },
     {
       "id": "16",
       "name": "Bose SoundLink Speaker",
       "price": 299,
-      "image": "/bose.jpg"
+      "image": "/bose.jpg",
+      "description": "Loa Bose SoundLink mang đến âm thanh sống động với công nghệ âm thanh Bose độc quyền. Kết nối Bluetooth nhanh chóng, thời lượng pin lên đến 12 giờ. Thiết kế nhỏ gọn, chống nước IPX4, phù hợp để mang theo trong các chuyến du lịch, dã ngoại hoặc sử dụng trong gia đình."
     },
     {
       "id": "17",
       "name": "LG OLED TV",
       "price": 2000,
-      "image": "/LG.jpg"
+      "image": "/LG.jpg",
+      "description": "LG OLED TV cung cấp trải nghiệm hình ảnh tuyệt vời với công nghệ OLED, màu sắc rực rỡ và độ tương phản cao. Hỗ trợ Dolby Vision, Dolby Atmos và tần số quét 120Hz giúp hình ảnh mượt mà. Trang bị hệ điều hành webOS, hỗ trợ trợ lý ảo và các ứng dụng giải trí phổ biến."
     },
     {
       "id": "18",
       "name": "Dyson V11 Vacuum Cleaner",
       "price": 600,
-      "image": "/dyson.jpg"
+      "image": "/dyson.jpg",
+      "description": "Động cơ kỹ thuật số tích hợp quay bàn hút lên đến 60 lần một giây. Động cơ này đưa những sợi nylon cứng vào sâu trong thảm để loại bỏ bụi bẩn và các sợi carbon lấy đi bụi mịn trên sàn cứng."
     },
     {
       "id": "19",
       "name": "Instant Pot Duo 7-in-1",
       "price": 100,
-      "image": "/Pot.jpg"
+      "image": "/Pot.jpg",
+      "description": "Nồi áp suất điện đa năng Instant Pot Duo 7-in-1 giúp bạn nấu ăn nhanh chóng và tiện lợi. Tích hợp 7 chức năng: nấu áp suất, nấu chậm, hấp, nấu cơm, làm sữa chua, hâm nóng và nấu súp. Dung tích lớn, dễ dàng vệ sinh, phù hợp cho gia đình bận rộn."
     },
     {
       "id": "20",
       "name": "Nespresso Coffee Machine",
       "price": 250,
-      "image": "/coffee.jpg"
+      "image": "/coffee.jpg",
+      "description": "Máy pha cà phê viên nén Nespresso mang đến những ly espresso đậm đà chỉ trong vài giây. Thiết kế nhỏ gọn, dễ sử dụng với hệ thống bơm áp suất 19 bar giúp chiết xuất hương vị cà phê tốt nhất. Phù hợp cho những người yêu thích cà phê tại nhà."
     },
     {
       "id": "21",
       "name": "Canon EOS R5 Camera",
       "price": 3500,
-      "image": "/canon.jpg"
+      "image": "/canon.jpg",
+      "description": "Canon EOS R5 là máy ảnh mirrorless chuyên nghiệp với cảm biến 45MP, khả năng quay video 8K và lấy nét Dual Pixel AF II siêu nhanh. Tích hợp chống rung 5 trục, chụp liên tiếp 20fps, phù hợp cho nhiếp ảnh gia chuyên nghiệp và quay phim chất lượng cao."
     },
     {
       "id": "22",
       "name": "GoPro Hero 11",
       "price": 499,
-      "image": "/gopro.jpg"
+      "image": "/gopro.jpg",
+      "description": "GoPro Hero 11 là camera hành trình nhỏ gọn, chống nước, quay video 5.3K với HDR. Cảm biến lớn hơn giúp ghi hình rõ nét trong mọi điều kiện ánh sáng. Hỗ trợ HyperSmooth 5.0 giúp chống rung cực kỳ hiệu quả, lý tưởng cho các hoạt động thể thao và du lịch."
     },
     {
       "id": "23",
       "name": "Samsung 4K Monitor",
       "price": 300,
-      "image": "/samsung4k.jpg"
+      "image": "/samsung4k.jpg",
+      "description": "Màn hình Samsung 4K UHD mang đến hình ảnh sắc nét, độ tương phản cao với công nghệ HDR10. Kích thước 27 inch, tần số quét 60Hz, thiết kế viền mỏng hiện đại. Phù hợp cho làm việc, giải trí, chỉnh sửa ảnh và chơi game."
     },
     {
       "id": "24",
       "name": "Xbox Series X",
       "price": 500,
-      "image": "/xbox.jpg"
+      "image": "/xbox.jpg",
+      "description": "Xbox Series X là máy chơi game mạnh mẽ nhất của Microsoft, hỗ trợ độ phân giải 4K với tốc độ khung hình lên đến 120fps. Tích hợp công nghệ Ray Tracing, SSD tốc độ cao và khả năng tương thích ngược với hàng trăm tựa game cũ."
     },
     {
       "id": "25",
       "name": "PlayStation 5",
       "price": 550,
-      "image": "/ps5.jpg"
+      "image": "/ps5.jpg",
+      "description": "PlayStation 5 mang đến trải nghiệm gaming đỉnh cao với đồ họa 4K, tốc độ tải nhanh nhờ SSD siêu tốc và tay cầm DualSense với phản hồi xúc giác. Hỗ trợ Ray Tracing, 3D Audio và bộ sưu tập game độc quyền hấp dẫn."
     },
     {
       "id": "26",
       "name": "Nintendo Switch OLED",
       "price": 350,
-      "image": "/nintendo.jpg"
+      "image": "/nintendo.jpg",
+      "description": "Nintendo Switch OLED phiên bản nâng cấp với màn hình 7 inch OLED sống động, chân đế rộng hơn và hệ thống âm thanh được cải thiện. Hỗ trợ chơi game linh hoạt với chế độ cầm tay, gắn dock hoặc tabletop."
     },
     {
       "id": "27",
       "name": "Fitbit Versa 4",
       "price": 199,
-      "image": "/fitbit.jpg"
+      "image": "/fitbit.jpg",
+      "description": "Fitbit Versa 4 là đồng hồ thông minh theo dõi sức khỏe với GPS tích hợp, đo nhịp tim, theo dõi giấc ngủ và hơn 40 chế độ luyện tập. Pin kéo dài đến 6 ngày, hỗ trợ thông báo thông minh và thanh toán không tiếp xúc."
     },
     {
       "id": "28",
       "name": "Peloton Bike",
       "price": 1499,
-      "image": "/peleton.jpg"
+      "image": "/peleton.jpg",
+      "description": "Peloton Bike là xe đạp tập cao cấp với màn hình cảm ứng 22 inch, truy cập hàng nghìn lớp học trực tuyến, đo nhịp tim và theo dõi hiệu suất luyện tập. Phù hợp cho người đam mê thể thao và rèn luyện thể chất tại nhà."
     },
     {
       "id": "29",
       "name": "NordicTrack Treadmill",
       "price": 1800,
-      "image": "/NordicTrack.jpg"
+      "image": "/NordicTrack.jpg",
+      "description": "Máy chạy bộ NordicTrack với màn hình cảm ứng 10 inch, hỗ trợ điều chỉnh độ dốc tự động, động cơ mạnh mẽ và kết nối ứng dụng iFit để tham gia các bài tập chuyên nghiệp."
     },
     {
       "id": "30",
       "name": "Dyson Supersonic Hair Dryer",
       "price": 400,
-      "image": "/dyson.jpg"
+      "image": "/dyson.jpg",
+      "description": "Máy sấy tóc Dyson Supersonic sử dụng công nghệ kiểm soát nhiệt thông minh để bảo vệ tóc khỏi hư tổn. Thiết kế nhẹ, động cơ mạnh mẽ giúp sấy khô nhanh mà không gây xơ rối, phù hợp cho mọi loại tóc."
     }
   ],
   "product_categories": [
@@ -364,7 +394,7 @@
       "id": "1",
       "name": "Nguyen Van A",
       "email": "nguyenvana@example.com",
-      "password": "hashed_password_1",
+      "password": "12345",
       "address": "Hà Nội, Việt Nam",
       "phone": "0123456789"
     },
@@ -402,12 +432,11 @@
     },
     {
       "id": 6,
-      "name": "Huy Đoàn",
+      "name": "Đoàn Quang Huy",
       "email": "doanhuy2004@gmail.com",
       "password": "12345",
-      "address": "VietNam",
-      "phone": "0987599814",
-      "role": "web-user"
+      "address": "Nam Dinh",
+      "phone": "0987599814"
     }
   ],
   "roles": [
@@ -459,6 +488,11 @@
       "user_id": 5,
       "role_id": 2,
       "id": "5046"
+    },
+    {
+      "id": "704cff66-bcdb-4c31-a2b0-e731d7224652",
+      "user_id": 6,
+      "role_id": 2
     }
   ],
   "cart": [

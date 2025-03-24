@@ -19,17 +19,46 @@ const Login = () => {
       );
 
       if (user) {
-        message.success("Đăng nhập thành công!");
-        localStorage.setItem("user", JSON.stringify(user)); // Lưu user vào localStorage
-        navigate("/"); // Chuyển hướng về trang chính
+        // 🔹 Bước 1: Lấy danh sách roleId từ user_roles
+        const roleUserResponse = await fetch(`http://localhost:9999/user_roles?user_id=${user.id}`);
+        const userRoles = await roleUserResponse.json();
+        console.log("User Roles:", userRoles);
+
+        if (userRoles.length > 0) {
+          const roleIds = userRoles.map((ur) => String(ur.role_id)); // Sửa roleId thành role_id
+          console.log("User Role IDs:", roleIds);
+
+          // 🔹 Bước 2: Lấy danh sách roles
+          const roleResponse = await fetch(`http://localhost:9999/roles`);
+          const roles = await roleResponse.json();
+          console.log("All Roles:", roles);
+
+          // 🔹 Bước 3: Lọc danh sách role name
+          const userRolesNames = roles
+            .filter((role) => roleIds.includes(role.id))
+            .map((role) => role.name);
+
+          console.log("User Role Names:", userRolesNames);
+
+          // 🔹 Bước 4: Lưu vào localStorage
+          const userData = { ...user, roles: userRolesNames };
+          localStorage.setItem("user", JSON.stringify(userData));
+
+          message.success("Đăng nhập thành công!");
+          navigate("/");
+        } else {
+          message.error("Không tìm thấy quyền người dùng!");
+        }
       } else {
         message.error("Email hoặc mật khẩu không đúng!");
       }
     } catch (error) {
+      console.error("Error:", error);
       message.error("Lỗi khi đăng nhập!");
     }
     setLoading(false);
   };
+
 
   return (
     <div style={styles.container}>

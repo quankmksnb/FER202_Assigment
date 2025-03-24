@@ -8,6 +8,7 @@ export const ProductProvider = ({ children }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
     axios.get("http://localhost:9999/products") // API hoặc file JSON
@@ -20,13 +21,9 @@ export const ProductProvider = ({ children }) => {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  const handleFilter = (category) => {
-    setSelectedCategory(category);
-    setFilteredProducts(category === "all" ? products : products.filter((p) => p.category === category));
-  };
 
   return (
-    <ProductContext.Provider value={{ filteredProducts, categories, selectedCategory, handleFilter }}>
+    <ProductContext.Provider value={{ filteredProducts, categories, selectedCategory, products, setProducts }}>
       {children}
     </ProductContext.Provider>
   );

@@ -1,7 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./header.css";
-import { Link  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import { ProductContext } from "../../context/ProductContext";
 import {
   NotificationsNone,
   ShoppingCartOutlined,
@@ -31,7 +32,7 @@ const MENU_ITEMS = [
 const Header = () => {
 
   const [showCategories, setShowCategories] = useState(false);
-
+  const [user, setUser] = useState(null);
   const { cart } = useContext(CartContext); // Lấy giỏ hàng từ context
   const [open, setOpen] = useState(false); // Kiểm soát dropdown
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -40,6 +41,7 @@ const Header = () => {
     const user = localStorage.getItem("user"); // Lấy dữ liệu từ localStorage
     if (user) {
       setIsLoggedIn(true);
+      setUser(JSON.parse(user));
     }
   }, []);
 
@@ -48,7 +50,7 @@ const Header = () => {
     setIsLoggedIn(false);
     window.location.href = "/login"; // Chuyển hướng đến trang đăng nhập
   };
-  
+
 
   // Render danh sách sản phẩm trong giỏ hàng
   const cartItems = (
@@ -144,14 +146,22 @@ const Header = () => {
           </div>
         </div>
         <div className="search-bar">
-          <input placeholder="Search for anything" type="text" />
+          <input placeholder="Search for anything" type="text" 
+          value={searchTerm}
+          onChange={handleSearchChange}/>
           <div className="search-category">
             <span>All Categories</span>
             <ExpandMoreOutlined />
           </div>
           <button className="search-button">Search</button>
         </div>
-        <a href="#" className="advanced-search">Advanced</a>
+        {user?.roles?.includes("admin") ? (
+          <Link to="/add-product" className="admin-link">
+            Add Product
+          </Link>
+        ) : (
+          <a href="#" className="advanced-search">Advanced</a>
+        )}
       </div>
 
       <nav className="header-bottom">
