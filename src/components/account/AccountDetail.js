@@ -1,133 +1,123 @@
-import React, { useState } from 'react';
-import { Card, Input, Form } from 'antd';
-import { Button } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Card, Input, Form, Tag } from 'antd';
+import { Button, FormCheck } from 'react-bootstrap';
 
-const AccountDetail = ({ account, onClose, onUpdate }) => {
+const AccountDetail = ({ account, roles, onClose, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedAccount, setEditedAccount] = useState({ ...account });
+  const [selectedRoleIds, setSelectedRoleIds] = useState([]);
+
+  useEffect(() => {
+    setEditedAccount({ ...account });
+    const roleIds = roles
+      .filter(role => account.roles.includes(role.name))
+      .map(role => role.id);
+    setSelectedRoleIds(roleIds);
+    setIsEditing(false);
+  }, [account, roles]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setEditedAccount(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setEditedAccount(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleCheckboxChange = (roleId) => {
+    setSelectedRoleIds(prev =>
+      prev.includes(roleId)
+        ? prev.filter(id => id !== roleId)
+        : [...prev, roleId]
+    );
   };
 
   const handleUpdate = () => {
-    // Basic validation
-    if (!editedAccount.name || !editedAccount.email) {
-      return;
-    }
+    if (!editedAccount.name || !editedAccount.address || !editedAccount.phone) return;
 
-    // Call the update function passed from parent
-    onUpdate(editedAccount);
+    const updateData = {
+      ...editedAccount,
+      email: account.email // keep email unchanged
+    };
 
-    // Exit edit mode
+    onUpdate(updateData, selectedRoleIds);
     setIsEditing(false);
   };
 
   return (
     <Card
       title="Account Details"
-      extra={
-        <Button 
-          variant="danger" 
-          onClick={onClose}
-          style={{ marginRight: 10 }}
-        >
-          Close
-        </Button>
-      }
-      style={{ 
-        height: '100%', 
-        boxShadow: '0 4px 6px rgba(0,0,0,0.1)', 
-        overflow: 'auto' 
-      }}
-      bodyStyle={{ padding: '20px' }}
+      extra={<Button variant="danger" onClick={onClose}>Close</Button>}
     >
       <Form layout="vertical">
         <Form.Item label="ID">
-          <Input 
-            value={editedAccount.id} 
-            disabled 
-          />
+          <Input value={editedAccount.id} disabled />
         </Form.Item>
 
         <Form.Item label="Name">
-          <Input 
+          <Input
             name="name"
-            value={isEditing ? editedAccount.name : account.name}
+            value={editedAccount.name}
             disabled={!isEditing}
             onChange={handleInputChange}
           />
         </Form.Item>
 
         <Form.Item label="Email">
-          <Input 
-            name="email"
-            value={isEditing ? editedAccount.email : account.email}
-            disabled={!isEditing}
-            onChange={handleInputChange}
-          />
+          <Input value={account.email} disabled />
         </Form.Item>
 
         <Form.Item label="Roles">
-          <Input 
-            value={account.roles && account.roles.length > 0 
-              ? account.roles.join(', ') 
-              : 'No roles assigned'} 
-            disabled 
-          />
+          {!isEditing ? (
+            account.roles && account.roles.length > 0 ? (
+              account.roles.map((role, index) => (
+                <Tag color="blue" key={index}>{role}</Tag>
+              ))
+            ) : 'No roles assigned'
+          ) : (
+            <div>
+              {roles.map(role => (
+                <FormCheck
+                  key={role.id}
+                  label={role.name}
+                  checked={selectedRoleIds.includes(role.id)}
+                  onChange={() => handleCheckboxChange(role.id)}
+                />
+              ))}
+            </div>
+          )}
         </Form.Item>
 
         <Form.Item label="Address">
-          <Input 
+          <Input
             name="address"
-            value={isEditing ? editedAccount.address : account.address}
+            value={editedAccount.address}
             disabled={!isEditing}
             onChange={handleInputChange}
           />
         </Form.Item>
 
         <Form.Item label="Phone">
-          <Input 
+          <Input
             name="phone"
-            value={isEditing ? editedAccount.phone : account.phone}
+            value={editedAccount.phone}
             disabled={!isEditing}
             onChange={handleInputChange}
           />
         </Form.Item>
 
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          marginTop: 20 
-        }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
           {!isEditing ? (
-            <Button 
-              variant="primary" 
-              onClick={() => setIsEditing(true)}
-            >
-              Edit
-            </Button>
+            <Button variant="primary" onClick={() => setIsEditing(true)}>Edit</Button>
           ) : (
             <>
-              <Button 
-                variant="secondary" 
+              <Button
+                variant="secondary"
                 onClick={() => {
-                  setIsEditing(false);
                   setEditedAccount({ ...account });
+                  setIsEditing(false);
                 }}
               >
                 Cancel
               </Button>
-              <Button 
-                variant="primary" 
-                onClick={handleUpdate}
-              >
-                Update
-              </Button>
+              <Button variant="primary" onClick={handleUpdate}>Update</Button>
             </>
           )}
         </div>

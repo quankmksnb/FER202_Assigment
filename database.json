@@ -239,6 +239,14 @@
       "image": "/dyson.jpg",
       "description": "Máy sấy tóc Dyson Supersonic sử dụng công nghệ kiểm soát nhiệt thông minh để bảo vệ tóc khỏi hư tổn. Thiết kế nhẹ, động cơ mạnh mẽ giúp sấy khô nhanh mà không gây xơ rối, phù hợp cho mọi loại tóc.",
       "salerId": 2
+    },
+    {
+      "id": "ed4d",
+      "name": "Thuốc Phiện",
+      "price": "9999999",
+      "image": "/anh-cho-hai-1.jpg",
+      "description": "Rất phê",
+      "salerId": "4"
     }
   ],
   "product_categories": [
@@ -391,6 +399,11 @@
       "product_id": 30,
       "category_id": 6,
       "id": "ae33"
+    },
+    {
+      "id": "e172",
+      "product_id": "ed4d",
+      "category_id": "1"
     }
   ],
   "categories": [
@@ -449,7 +462,7 @@
     },
     {
       "id": "3",
-      "name": "Chị Em Cypher",
+      "name": "Chị Em Cypher 2",
       "email": "levanc@example.com",
       "password": "hashed_password_3",
       "address": "Đà Nẵng, Việt Nam",
@@ -459,17 +472,20 @@
         3
       ],
       "roles": [
-        "Unknown Role",
-        "Unknown Role"
+        "web-user",
+        "saler"
       ]
     },
     {
       "id": "4",
-      "name": "Mixi Shop",
+      "name": "Mixi Shop Food",
       "email": "quankmksnb2@gmail.com",
       "password": "12345",
       "address": "Cần Thơ, Việt Nam",
-      "phone": "0934567890"
+      "phone": "0934567890",
+      "roles": [
+        "saler"
+      ]
     },
     {
       "id": "5",
@@ -504,16 +520,6 @@
   ],
   "user_roles": [
     {
-      "user_id": 1,
-      "role_id": 1,
-      "id": "ad41"
-    },
-    {
-      "user_id": 1,
-      "role_id": 2,
-      "id": "c291"
-    },
-    {
       "user_id": 2,
       "role_id": 3,
       "id": "a53e"
@@ -542,6 +548,11 @@
       "id": "704cff66-bcdb-4c31-a2b0-e731d7224652",
       "user_id": 6,
       "role_id": 1
+    },
+    {
+      "id": "6051",
+      "user_id": "1",
+      "role_id": "2"
     }
   ],
   "cart": [

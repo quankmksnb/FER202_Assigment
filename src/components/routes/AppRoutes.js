@@ -17,6 +17,7 @@ import ProductOfSaler from "../product/ProductOfSaler";
 import MyShopProduct from "../product/MyShopProduct";
 import AccountManagement from "../account/AccountManagement";
 import AccountDetail from "../account/AccountDetail";
+import AccountCreate from "../account/AccountCreate";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const AppRoutes = () => {
     location.pathname.startsWith("/productofsaler/") ||
     location.pathname === "/productlist";
   const isAccountManagementPage = location.pathname === "/account";
+  const isCreatePage = location.pathname === '/create-account';
 
   return (
     <>
@@ -46,6 +48,7 @@ const AppRoutes = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<AccountManagement />} />
         <Route path="/account/:id" element={<AccountDetail />} />
+        <Route path="/create-account" element={<AccountCreate/>}/>
       </Routes>
 
       {/* Chỉ hiển thị ProductList nếu có searchText */}
@@ -53,7 +56,7 @@ const AppRoutes = () => {
         <ProductList />
       )}
 
-      {!isAuthPage && !isProductDetailPage && !isSpecialPage && !isAccountManagementPage && (
+      {!isAuthPage && !isProductDetailPage && !isSpecialPage && !isAccountManagementPage && !isCreatePage && (
         <>
           <Slider />
           <Category />
