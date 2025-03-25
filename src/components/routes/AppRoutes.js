@@ -18,6 +18,7 @@ import MyShopProduct from "../product/MyShopProduct";
 import AccountManagement from "../account/AccountManagement";
 import AccountDetail from "../account/AccountDetail";
 import AccountCreate from "../account/AccountCreate";
+import OrderHistory from "../product/OrderHistory";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -32,12 +33,15 @@ const AppRoutes = () => {
     location.pathname === "/productlist";
   const isAccountManagementPage = location.pathname === "/account";
   const isCreatePage = location.pathname === '/create-account';
+  const isOrderHistoryPage = location.pathname === "/order-history"; // Kiểm tra trang OrderHistory
+
 
   return (
     <>
       {!isAuthPage && <Header />}
 
       <Routes>
+        <Route path="/order-history" element={<OrderHistory />} />
         <Route path="/myshopproduct/:id" element={<MyShopProduct />} />
         <Route path="/productofsaler/:id" element={<ProductOfSaler />} />
         <Route path="/add-product" element={<AddProduct />} />
@@ -48,7 +52,7 @@ const AppRoutes = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<AccountManagement />} />
         <Route path="/account/:id" element={<AccountDetail />} />
-        <Route path="/create-account" element={<AccountCreate/>}/>
+        <Route path="/create-account" element={<AccountCreate />} />
       </Routes>
 
       {/* Chỉ hiển thị ProductList nếu có searchText */}
@@ -56,7 +60,8 @@ const AppRoutes = () => {
         <ProductList />
       )}
 
-      {!isAuthPage && !isProductDetailPage && !isSpecialPage && !isAccountManagementPage && !isCreatePage && (
+      {/* Ẩn Slider, Category, MainCarousel khi ở trang OrderHistory */}
+      {!isAuthPage && !isProductDetailPage && !isSpecialPage && !isAccountManagementPage && !isCreatePage && !isOrderHistoryPage && (
         <>
           <Slider />
           <Category />
