@@ -6,11 +6,9 @@ import { CartContext } from "../../context/CartContext";
 import { ProductContext } from "../../context/ProductContext";
 import {
   NotificationsNone,
-  ShoppingCartOutlined,
-  ExpandMoreOutlined,
-  Favorite,
+  ShoppingCartOutlined
 } from "@mui/icons-material";
-import { Dropdown, Badge, Button } from "antd";
+import { Dropdown, Badge, Button, List, Avatar, Divider } from "antd";
 import CategoryList from "../Category/CategoryList";
 import SalerList from "../saler/SalerList";
 
@@ -57,32 +55,41 @@ const Header = () => {
 
   // Render danh sách sản phẩm trong giỏ hàng
   const cartItems = (
-    <div className="cart-dropdown">
+    <div className="card cart-dropdown p-3">
       {cart.length > 0 ? (
         <>
-          {cart.map((item) => (
-            <div key={item.id} className="cart-dropdown-item">
-              <img src={item.product.image} alt={item.product.name} className="cart-item-image" />
-              <div className="cart-item-info">
-                <p className="cart-item-name">{item.product.name}</p>
-                <p className="cart-item-price">{item.product.price} $</p>
-                <p className="cart-item-quantity">Số lượng: {item.quantity}</p>
-              </div>
-            </div>
-          ))}
-          <div className="cart-dropdown-footer">
-            <Button type="primary" block>
+          <ul className="list-group list-group-flush">
+            {cart.map((item) => (
+              <li key={item.id} className="list-group-item d-flex align-items-center">
+                <img
+                  src={item.product.image}
+                  alt={item.product.name}
+                  className="cart-item-image me-3 rounded"
+                  style={{ width: "50px", height: "50px", objectFit: "cover" }}
+                />
+                <div className="cart-item-info flex-grow-1">
+                  <p className="mb-1 fw-bold">{item.product.name}</p>
+                  <p className="mb-1 text-muted">{item.product.price} $</p>
+                  <p className="mb-0">Số lượng: {item.quantity}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="cart-dropdown-footer text-center mt-3">
+            <Button type="primary" className="btn btn-primary w-100" block>
               <Link to="/cart">Xem giỏ hàng</Link>
             </Button>
           </div>
         </>
       ) : (
-        <p className="cart-empty">Giỏ hàng trống</p>
+        <p className="cart-empty text-center text-muted">Giỏ hàng trống</p>
       )}
-
     </div>
-  );
 
+  );
+  <Button type="primary" block>
+    <Link to="/cart">Xem giỏ hàng</Link>
+  </Button>
   // Render tùy thuộc vào quyền của người dùng
   const renderRoleLink = () => {
     if (userRole === "admin") {
@@ -165,7 +172,11 @@ const Header = () => {
           alt="eBay Logo"
           className="logo"
         />
-        <div className="relative">
+        <div
+          className="relative"
+          onMouseEnter={() => setShowCategories(true)}
+          onMouseLeave={() => setShowCategories(false)}
+        >
           <div
             className="category-dropdown"
             onClick={() => setShowCategories(!showCategories)}
@@ -179,6 +190,7 @@ const Header = () => {
             <CategoryList />
           </div>
         </div>
+
         <div className="search-bar">
           <input
             placeholder="Search for anything"
@@ -192,21 +204,16 @@ const Header = () => {
         {/* Hiển thị nút Button thay vì liên kết */}
         {renderRoleLink()}
       </div>
-      
-      <nav className="header-bottom">
-        <ul>
-          {MENU_ITEMS.map((item, index) => (
-            <li key={index} className={item === "Home" ? "active" : ""}>
-              <a href="#">
-                {item === "Saved" ? <Favorite className="icon" /> : null} {item}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <Row>
-        <SalerList />
+
+      <Row className="d-flex align-items-center">
+        <Col className="col-md-1">
+          <h4 className="mb-0">Saler:</h4>
+        </Col>
+        <Col>
+          <SalerList />
+        </Col>
       </Row>
+
     </header>
   );
 };

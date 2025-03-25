@@ -239,6 +239,14 @@
       "image": "/dyson.jpg",
       "description": "Máy sấy tóc Dyson Supersonic sử dụng công nghệ kiểm soát nhiệt thông minh để bảo vệ tóc khỏi hư tổn. Thiết kế nhẹ, động cơ mạnh mẽ giúp sấy khô nhanh mà không gây xơ rối, phù hợp cho mọi loại tóc.",
       "salerId": 2
+    },
+    {
+      "id": "c467",
+      "name": "Kera",
+      "price": "15",
+      "image": "/kera.jpg",
+      "description": "1 vien = 1 dia rau",
+      "salerId": "2"
     }
   ],
   "product_categories": [
@@ -391,6 +399,11 @@
       "product_id": 30,
       "category_id": 6,
       "id": "ae33"
+    },
+    {
+      "id": "174d",
+      "product_id": "c467",
+      "category_id": "5"
     }
   ],
   "categories": [
@@ -560,6 +573,20 @@
       "product_id": "7",
       "quantity": 1,
       "added_at": "2025-03-24T16:25:32.881Z"
+    },
+    {
+      "id": "2b40",
+      "user_id": null,
+      "product_id": "c467",
+      "quantity": 1,
+      "added_at": "2025-03-25T00:46:38.543Z"
+    },
+    {
+      "id": "ae0b",
+      "user_id": null,
+      "product_id": "4",
+      "quantity": 1,
+      "added_at": "2025-03-25T09:46:05.388Z"
     }
   ],
   "history": [

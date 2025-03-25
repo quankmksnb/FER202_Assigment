@@ -42,8 +42,8 @@ const ProductList = () => {
 
                 {/* Nội dung sản phẩm */}
                 <div className="card-body text-center">
-                  <h5 className="card-title fw-bold">{product.name || "Không có tên"}</h5>
-                  <p className="text-danger fw-semibold fs-5">${product.price || "N/A"}</p>
+                  <h5>{product.name || "Không có tên"}</h5>
+                  <p className="text-danger fw-semibold fs-5">Price : ${product.price || "N/A"}</p>
                 </div>
 
                 {/* Nút hành động - Đẹp hơn với Bootstrap */}
