@@ -1,10 +1,8 @@
-// AccountManagement.jsx
 import React, { useEffect, useState } from 'react';
 import { Table, Tag, Input, Select, Row, Col, Card, message } from 'antd';
 import { SearchOutlined, UserOutlined } from '@ant-design/icons';
 import { Button } from 'react-bootstrap';
 import AccountDetail from './AccountDetail';
-import AccountCreate from './AccountCreate';
 import { useNavigate } from 'react-router-dom';
 
 const AccountManagement = () => {
@@ -61,28 +59,26 @@ const AccountManagement = () => {
     fetchData();
   }, []);
 
+  // ✅ Cập nhật xử lý update chuẩn
   const handleUpdateAccount = async (updatedAccount, newRoleIds) => {
     try {
-      // 1. Update user basic info
+      // 1. Update user info
       const res = await fetch(`http://localhost:9999/users/${updatedAccount.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedAccount)
       });
-
       if (!res.ok) throw new Error('Failed to update user');
 
-      // 2. Delete existing user_roles for that user
-      const rolesToDelete = userRoles.filter(ur => ur.user_id == updatedAccount.id);
+      // 2. Xoá tất cả user_roles cũ của user đó
+      const oldUserRoles = userRoles.filter(ur => ur.user_id == updatedAccount.id);
       await Promise.all(
-        rolesToDelete.map(ur =>
-          fetch(`http://localhost:9999/user_roles/${ur.id}`, {
-            method: 'DELETE',
-          })
+        oldUserRoles.map(ur =>
+          fetch(`http://localhost:9999/user_roles/${ur.id}`, { method: 'DELETE' })
         )
       );
 
-      // 3. Add new user_roles
+      // 3. Thêm mới toàn bộ user_roles với role_id đã chọn
       await Promise.all(
         newRoleIds.map(roleId =>
           fetch(`http://localhost:9999/user_roles`, {
@@ -96,7 +92,7 @@ const AccountManagement = () => {
         )
       );
 
-      // 4. Update local state
+      // 4. Update local UI
       const updatedRoles = newRoleIds.map(rid => {
         const role = roles.find(r => r.id == rid);
         return role ? role.name : 'Unknown Role';
@@ -220,7 +216,6 @@ const AccountManagement = () => {
       }
       style={{ margin: '20px' }}
     >
-
       <Row gutter={16}>
         <Col xs={24} md={selectedAccount ? 16 : 24}>
           <Row gutter={[16, 16]} style={{ marginBottom: 20 }}>

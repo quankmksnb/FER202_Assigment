@@ -26,6 +26,16 @@ const AccountCreate = () => {
     fetchRoles();
   }, []);
 
+  const generateRandomPassword = (length = 8) => {
+    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+';
+    let password = '';
+    for (let i = 0; i < length; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return password;
+  };
+  
+
   const handleRoleChange = (roleId) => {
     setSelectedRoles(prev =>
       prev.includes(roleId)
@@ -52,7 +62,8 @@ const AccountCreate = () => {
           email,
           address: '',
           phone: '',
-          password: '12345' // hoặc để backend tự xử lý
+          password: generateRandomPassword()
+
         })
       });
 

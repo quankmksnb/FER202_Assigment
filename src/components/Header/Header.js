@@ -116,7 +116,21 @@ const Header = () => {
           </Link>
         </Button>
       );
-    } else {
+    }
+    // else if (userRole === "category manager") {
+    //   return (
+    //     <Button
+    //       type="primary"
+    //       size="large"
+    //       style={{ borderRadius: 30, fontWeight: "bold" }}
+    //     >
+    //       <Link to="/add-product" style={{ color: "white", textDecoration: "none" }}>
+    //         Category Management
+    //       </Link>
+    //     </Button>
+    //   );
+    // }
+    else {
       return (
         <div style={{ width: "12%", paddingBottom: "20px" }}></div>
       );

@@ -520,8 +520,16 @@
       "password": "12345",
       "roles": [
         "admin",
-        "web-user"
+        "saler"
       ]
+    },
+    {
+      "id": "a669",
+      "name": "Category tới chơi bro",
+      "email": "quankmksnb3@gmail.com",
+      "address": "",
+      "phone": "",
+      "password": "12345"
     }
   ],
   "roles": [
@@ -580,29 +588,14 @@
       "role_id": "2"
     },
     {
-      "id": "eeed",
-      "user_id": "35ff",
-      "role_id": "1"
-    },
-    {
-      "id": "864b",
-      "user_id": "35ff",
-      "role_id": "2"
-    },
-    {
-      "id": "74e3",
-      "user_id": "35ff",
-      "role_id": "1"
-    },
-    {
-      "id": "e6ae",
-      "user_id": "35ff",
-      "role_id": "2"
-    },
-    {
-      "id": "674c",
+      "id": "3a40",
       "user_id": "35ff",
       "role_id": "3"
+    },
+    {
+      "id": "35b8",
+      "user_id": "a669",
+      "role_id": "4"
     }
   ],
   "cart": [
@@ -631,15 +624,15 @@
       "id": "6938",
       "user_id": "5",
       "product_id": "5",
-      "quantity": 4,
+      "quantity": 2,
       "added_at": "2025-03-24T15:52:41.015Z"
     },
     {
-      "id": "9251",
+      "id": "0f53",
       "user_id": "5",
-      "product_id": "7",
+      "product_id": "19",
       "quantity": 1,
-      "added_at": "2025-03-24T16:25:32.881Z"
+      "added_at": "2025-03-25T18:30:09.656Z"
     }
   ],
   "history": [
