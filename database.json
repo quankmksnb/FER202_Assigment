@@ -502,6 +502,26 @@
       "password": "12345",
       "address": "Nam Dinh",
       "phone": "0987599814"
+    },
+    {
+      "id": "a5bf",
+      "name": "User Mới Tạo Lần 1",
+      "email": "newuser1@gmail.com",
+      "address": "",
+      "phone": "",
+      "password": "12345"
+    },
+    {
+      "id": "35ff",
+      "name": "User Mới Tạo Lần 2",
+      "email": "newuser2@gmail.com",
+      "address": "em ở cầu giấy",
+      "phone": "0889501527",
+      "password": "12345",
+      "roles": [
+        "admin",
+        "web-user"
+      ]
     }
   ],
   "roles": [
@@ -553,6 +573,36 @@
       "id": "6051",
       "user_id": "1",
       "role_id": "2"
+    },
+    {
+      "id": "f42c",
+      "user_id": "a5bf",
+      "role_id": "2"
+    },
+    {
+      "id": "eeed",
+      "user_id": "35ff",
+      "role_id": "1"
+    },
+    {
+      "id": "864b",
+      "user_id": "35ff",
+      "role_id": "2"
+    },
+    {
+      "id": "74e3",
+      "user_id": "35ff",
+      "role_id": "1"
+    },
+    {
+      "id": "e6ae",
+      "user_id": "35ff",
+      "role_id": "2"
+    },
+    {
+      "id": "674c",
+      "user_id": "35ff",
+      "role_id": "3"
     }
   ],
   "cart": [
