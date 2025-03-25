@@ -15,18 +15,23 @@ import AddProduct from "../product/AddProduct";
 import ProductList from "../product/ProductList";
 import ProductOfSaler from "../product/ProductOfSaler";
 import MyShopProduct from "../product/MyShopProduct";
+import AccountManagement from "../account/AccountManagement";
+import AccountDetail from "../account/AccountDetail";
+import AccountCreate from "../account/AccountCreate";
 
 const AppRoutes = () => {
   const location = useLocation();
   const { searchText } = useContext(ProductContext); // Lấy searchText từ context
-  
+
   const isAuthPage = location.pathname === "/login" || location.pathname === "/register";
   const isProductDetailPage = location.pathname.startsWith("/product/");
   const isCategoryPage = location.pathname.startsWith("/category/");
-  const isSpecialPage = 
-    location.pathname.startsWith("/myshopproduct/") || 
-    location.pathname.startsWith("/productofsaler/") || 
+  const isSpecialPage =
+    location.pathname.startsWith("/myshopproduct/") ||
+    location.pathname.startsWith("/productofsaler/") ||
     location.pathname === "/productlist";
+  const isAccountManagementPage = location.pathname === "/account";
+  const isCreatePage = location.pathname === '/create-account';
 
   return (
     <>
@@ -41,6 +46,9 @@ const AppRoutes = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/account" element={<AccountManagement />} />
+        <Route path="/account/:id" element={<AccountDetail />} />
+        <Route path="/create-account" element={<AccountCreate/>}/>
       </Routes>
 
       {/* Chỉ hiển thị ProductList nếu có searchText */}
@@ -48,7 +56,7 @@ const AppRoutes = () => {
         <ProductList />
       )}
 
-      {!isAuthPage && !isProductDetailPage && !isSpecialPage && (
+      {!isAuthPage && !isProductDetailPage && !isSpecialPage && !isAccountManagementPage && !isCreatePage && (
         <>
           <Slider />
           <Category />

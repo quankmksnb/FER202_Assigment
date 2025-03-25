@@ -19,7 +19,7 @@
     {
       "id": "3",
       "name": "MacBook Air M2",
-      "price": 1200,
+      "price": "1205",
       "image": "/macbook.jpg",
       "description": "MacBook Air M2 là dòng laptop siêu mỏng nhẹ của Apple, được trang bị chip Apple M2 mạnh mẽ với CPU 8 nhân và GPU lên đến 10 nhân, mang lại hiệu suất vượt trội. Máy có màn hình Liquid Retina 13.6 inch với độ sáng 500 nits, hỗ trợ gam màu P3 và công nghệ True Tone. Thiết kế hoàn toàn mới với thân nhôm nguyên khối siêu nhẹ chỉ 1.24 kg. Pin cho thời gian sử dụng lên đến 18 giờ, hỗ trợ sạc nhanh MagSafe. Bàn phím Magic Keyboard có Touch ID giúp bảo mật tiện lợi, hệ thống loa 4 loa hỗ trợ Spatial Audio cho trải nghiệm âm thanh sống động.",
       "salerId": 4
@@ -241,20 +241,12 @@
       "salerId": 2
     },
     {
-      "id": "c467",
-      "name": "Kera",
-      "price": "15",
-      "image": "/kera.jpg",
-      "description": "1 vien = 1 dia rau",
-      "salerId": "2"
-    },
-    {
-      "id": "8688",
-      "name": "Bóng Động Lực Promax",
-      "price": "12",
-      "image": "/quabong.jpg",
-      "description": "Bóng bền ,đẹp. Sút mãi không hỏng",
-      "salerId": "2"
+      "id": "ed4d",
+      "name": "Thuốc Phiện",
+      "price": "9999999",
+      "image": "/anh-cho-hai-1.jpg",
+      "description": "Rất phê",
+      "salerId": "4"
     }
   ],
   "product_categories": [
@@ -409,14 +401,9 @@
       "id": "ae33"
     },
     {
-      "id": "174d",
-      "product_id": "c467",
-      "category_id": "5"
-    },
-    {
-      "id": "0595",
-      "product_id": "8688",
-      "category_id": "2"
+      "id": "e172",
+      "product_id": "ed4d",
+      "category_id": "1"
     }
   ],
   "categories": [
@@ -448,40 +435,62 @@
   "users": [
     {
       "id": "1",
-      "name": "Nguyen Van A",
-      "email": "nguyenvana@example.com",
+      "name": "Nguyen Van Minh Anh",
+      "email": "bnguyenvan@example.com",
       "password": "12345",
-      "address": "Hà Nội, Việt Nam",
-      "phone": "0123456789"
+      "address": "Ninh Bình, Việt Nam",
+      "phone": "0889501529",
+      "roles": [
+        "admin",
+        "web-user"
+      ],
+      "roleIds": [
+        1,
+        2
+      ]
     },
     {
       "id": "2",
-      "name": "Shop ABC",
+      "name": "Shop ABCD",
       "email": "tranthib@example.com",
       "password": "hashed_password_2",
       "address": "TP.HCM, Việt Nam",
-      "phone": "0987654321"
+      "phone": "0987654321",
+      "roles": [
+        "saler"
+      ]
     },
     {
       "id": "3",
-      "name": "Chị Em Rọt",
+      "name": "Chị Em Cypher 2",
       "email": "levanc@example.com",
       "password": "hashed_password_3",
       "address": "Đà Nẵng, Việt Nam",
-      "phone": "0369852147"
+      "phone": "0123123124",
+      "roleIds": [
+        2,
+        3
+      ],
+      "roles": [
+        "web-user",
+        "saler"
+      ]
     },
     {
       "id": "4",
-      "name": "Mixi Shop",
+      "name": "Mixi Shop Food",
       "email": "quankmksnb2@gmail.com",
-      "password": "1234567",
+      "password": "12345",
       "address": "Cần Thơ, Việt Nam",
-      "phone": "0934567890"
+      "phone": "0934567890",
+      "roles": [
+        "saler"
+      ]
     },
     {
       "id": "5",
       "name": "Hoang Van E",
-      "email": "doanhuy2004@gmail.com",
+      "email": "quankmksnb1@gmail.com",
       "password": "12345",
       "address": "Hải Phòng, Việt Nam",
       "phone": "0975123456"
@@ -493,6 +502,26 @@
       "password": "12345",
       "address": "Nam Dinh",
       "phone": "0987599814"
+    },
+    {
+      "id": "a5bf",
+      "name": "User Mới Tạo Lần 1",
+      "email": "newuser1@gmail.com",
+      "address": "",
+      "phone": "",
+      "password": "12345"
+    },
+    {
+      "id": "35ff",
+      "name": "User Mới Tạo Lần 2",
+      "email": "newuser2@gmail.com",
+      "address": "em ở cầu giấy",
+      "phone": "0889501527",
+      "password": "12345",
+      "roles": [
+        "admin",
+        "web-user"
+      ]
     }
   ],
   "roles": [
@@ -510,16 +539,6 @@
     }
   ],
   "user_roles": [
-    {
-      "user_id": 1,
-      "role_id": 1,
-      "id": "ad41"
-    },
-    {
-      "user_id": 1,
-      "role_id": 2,
-      "id": "c291"
-    },
     {
       "user_id": 2,
       "role_id": 3,
@@ -549,6 +568,41 @@
       "id": "704cff66-bcdb-4c31-a2b0-e731d7224652",
       "user_id": 6,
       "role_id": 1
+    },
+    {
+      "id": "6051",
+      "user_id": "1",
+      "role_id": "2"
+    },
+    {
+      "id": "f42c",
+      "user_id": "a5bf",
+      "role_id": "2"
+    },
+    {
+      "id": "eeed",
+      "user_id": "35ff",
+      "role_id": "1"
+    },
+    {
+      "id": "864b",
+      "user_id": "35ff",
+      "role_id": "2"
+    },
+    {
+      "id": "74e3",
+      "user_id": "35ff",
+      "role_id": "1"
+    },
+    {
+      "id": "e6ae",
+      "user_id": "35ff",
+      "role_id": "2"
+    },
+    {
+      "id": "674c",
+      "user_id": "35ff",
+      "role_id": "3"
     }
   ],
   "cart": [
@@ -586,13 +640,6 @@
       "product_id": "7",
       "quantity": 1,
       "added_at": "2025-03-24T16:25:32.881Z"
-    },
-    {
-      "id": "5bbb",
-      "user_id": null,
-      "product_id": "1",
-      "quantity": 1,
-      "added_at": "2025-03-25T17:21:27.555Z"
     }
   ],
   "history": [
