@@ -92,8 +92,8 @@ const Header = () => {
           size="large"
           style={{ borderRadius: 30, fontWeight: "bold" }}
         >
-          <Link to="/create-account" style={{ color: "white" }}>
-            Create Account
+          <Link to="/account" style={{ color: "white", textDecoration: "none" }}>
+            Account Management
           </Link>
         </Button>
       );
@@ -104,7 +104,7 @@ const Header = () => {
           size="large"
           style={{ borderRadius: 30, fontWeight: "bold" }}
         >
-          <Link to="/add-product" style={{ color: "white" }}>
+          <Link to="/add-product" style={{ color: "white", textDecoration: "none" }}>
             Add Product
           </Link>
         </Button>

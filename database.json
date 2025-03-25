@@ -19,7 +19,7 @@
     {
       "id": "3",
       "name": "MacBook Air M2",
-      "price": 1200,
+      "price": "1205",
       "image": "/macbook.jpg",
       "description": "MacBook Air M2 là dòng laptop siêu mỏng nhẹ của Apple, được trang bị chip Apple M2 mạnh mẽ với CPU 8 nhân và GPU lên đến 10 nhân, mang lại hiệu suất vượt trội. Máy có màn hình Liquid Retina 13.6 inch với độ sáng 500 nits, hỗ trợ gam màu P3 và công nghệ True Tone. Thiết kế hoàn toàn mới với thân nhôm nguyên khối siêu nhẹ chỉ 1.24 kg. Pin cho thời gian sử dụng lên đến 18 giờ, hỗ trợ sạc nhanh MagSafe. Bàn phím Magic Keyboard có Touch ID giúp bảo mật tiện lợi, hệ thống loa 4 loa hỗ trợ Spatial Audio cho trải nghiệm âm thanh sống động.",
       "salerId": 4
@@ -422,40 +422,59 @@
   "users": [
     {
       "id": "1",
-      "name": "Nguyen Van A",
-      "email": "nguyenvana@example.com",
+      "name": "Nguyen Van Minh Anh",
+      "email": "bnguyenvan@example.com",
       "password": "12345",
-      "address": "Hà Nội, Việt Nam",
-      "phone": "0123456789"
+      "address": "Ninh Bình, Việt Nam",
+      "phone": "0889501529",
+      "roles": [
+        "admin",
+        "web-user"
+      ],
+      "roleIds": [
+        1,
+        2
+      ]
     },
     {
       "id": "2",
-      "name": "Shop ABC",
+      "name": "Shop ABCD",
       "email": "tranthib@example.com",
       "password": "hashed_password_2",
       "address": "TP.HCM, Việt Nam",
-      "phone": "0987654321"
+      "phone": "0987654321",
+      "roles": [
+        "saler"
+      ]
     },
     {
       "id": "3",
-      "name": "Chị Em Rọt",
+      "name": "Chị Em Cypher",
       "email": "levanc@example.com",
       "password": "hashed_password_3",
       "address": "Đà Nẵng, Việt Nam",
-      "phone": "0369852147"
+      "phone": "0123123124",
+      "roleIds": [
+        2,
+        3
+      ],
+      "roles": [
+        "Unknown Role",
+        "Unknown Role"
+      ]
     },
     {
       "id": "4",
       "name": "Mixi Shop",
       "email": "quankmksnb2@gmail.com",
-      "password": "1234567",
+      "password": "12345",
       "address": "Cần Thơ, Việt Nam",
       "phone": "0934567890"
     },
     {
       "id": "5",
       "name": "Hoang Van E",
-      "email": "doanhuy2004@gmail.com",
+      "email": "quankmksnb1@gmail.com",
       "password": "12345",
       "address": "Hải Phòng, Việt Nam",
       "phone": "0975123456"
