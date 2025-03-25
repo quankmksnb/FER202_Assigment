@@ -247,6 +247,14 @@
       "image": "/kera.jpg",
       "description": "1 vien = 1 dia rau",
       "salerId": "2"
+    },
+    {
+      "id": "8688",
+      "name": "Bóng Động Lực Promax",
+      "price": "12",
+      "image": "/quabong.jpg",
+      "description": "Bóng bền ,đẹp. Sút mãi không hỏng",
+      "salerId": "2"
     }
   ],
   "product_categories": [
@@ -404,6 +412,11 @@
       "id": "174d",
       "product_id": "c467",
       "category_id": "5"
+    },
+    {
+      "id": "0595",
+      "product_id": "8688",
+      "category_id": "2"
     }
   ],
   "categories": [
@@ -575,18 +588,11 @@
       "added_at": "2025-03-24T16:25:32.881Z"
     },
     {
-      "id": "2b40",
+      "id": "5bbb",
       "user_id": null,
-      "product_id": "c467",
+      "product_id": "1",
       "quantity": 1,
-      "added_at": "2025-03-25T00:46:38.543Z"
-    },
-    {
-      "id": "ae0b",
-      "user_id": null,
-      "product_id": "4",
-      "quantity": 1,
-      "added_at": "2025-03-25T09:46:05.388Z"
+      "added_at": "2025-03-25T17:21:27.555Z"
     }
   ],
   "history": [
