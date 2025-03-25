@@ -37,6 +37,7 @@ const Header = () => {
   const [userRole, setUserRole] = useState(null); // Thêm state để lưu role của user
   const { setSearchText } = useContext(ProductContext);
 
+
   useEffect(() => {
     const storedUser = localStorage.getItem("user"); // Lấy dữ liệu từ localStorage
     if (storedUser) {
@@ -77,7 +78,10 @@ const Header = () => {
           </ul>
           <div className="cart-dropdown-footer text-center mt-3">
             <Button type="primary" className="btn btn-primary w-100" block>
-              <Link to="/cart">Xem giỏ hàng</Link>
+              <Link to="/cart" className="text-white text-decoration-none">Xem giỏ hàng</Link>
+            </Button>
+            <Button type="default" className="btn btn-danger w-100 mt-2" block>
+              <Link to="/order-history" className="text-white text-decoration-none">Lịch sử mua hàng</Link>
             </Button>
           </div>
         </>

@@ -247,6 +247,14 @@
       "image": "/anh-cho-hai-1.jpg",
       "description": "Rất phê",
       "salerId": "4"
+    },
+    {
+      "id": "59ea",
+      "name": "Kẹo viên rau củ Kera",
+      "price": "17",
+      "image": "/kera.jpg",
+      "description": "chỉ cần uống 1 viên tương đương với 1 đĩa rau nhé các fen",
+      "salerId": "4"
     }
   ],
   "product_categories": [
@@ -404,6 +412,11 @@
       "id": "e172",
       "product_id": "ed4d",
       "category_id": "1"
+    },
+    {
+      "id": "ce3e",
+      "product_id": "59ea",
+      "category_id": "5"
     }
   ],
   "categories": [
@@ -607,27 +620,6 @@
   ],
   "cart": [
     {
-      "id": "1",
-      "user_id": 1,
-      "product_id": 1,
-      "quantity": 2,
-      "added_at": "2024-03-14T10:30:00Z"
-    },
-    {
-      "id": "2",
-      "user_id": 1,
-      "product_id": 2,
-      "quantity": 1,
-      "added_at": "2024-03-14T10:45:00Z"
-    },
-    {
-      "id": "123b",
-      "user_id": "5",
-      "product_id": "2",
-      "quantity": 1,
-      "added_at": "2025-03-24T11:53:49.121Z"
-    },
-    {
       "id": "6938",
       "user_id": "5",
       "product_id": "5",
@@ -640,6 +632,34 @@
       "product_id": "7",
       "quantity": 1,
       "added_at": "2025-03-24T16:25:32.881Z"
+    },
+    {
+      "id": "cb7f",
+      "user_id": null,
+      "product_id": "1",
+      "quantity": 2,
+      "added_at": "2025-03-25T17:47:45.868Z"
+    },
+    {
+      "id": "5fbb",
+      "user_id": null,
+      "product_id": "2",
+      "quantity": 1,
+      "added_at": "2025-03-25T18:24:21.580Z"
+    },
+    {
+      "id": "0aaf",
+      "user_id": null,
+      "product_id": "8",
+      "quantity": 1,
+      "added_at": "2025-03-25T18:24:58.481Z"
+    },
+    {
+      "id": "01cc",
+      "user_id": null,
+      "product_id": "10",
+      "quantity": 1,
+      "added_at": "2025-03-25T18:35:50.841Z"
     }
   ],
   "history": [
