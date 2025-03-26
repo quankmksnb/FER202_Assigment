@@ -441,7 +441,6 @@
       "address": "Ninh Bình, Việt Nam",
       "phone": "0889501529",
       "roles": [
-        "admin",
         "web-user"
       ],
       "roleIds": [
@@ -578,11 +577,6 @@
       "role_id": 1
     },
     {
-      "id": "6051",
-      "user_id": "1",
-      "role_id": "2"
-    },
-    {
       "id": "f42c",
       "user_id": "a5bf",
       "role_id": "2"
@@ -596,6 +590,11 @@
       "id": "35b8",
       "user_id": "a669",
       "role_id": "4"
+    },
+    {
+      "id": "483f",
+      "user_id": "1",
+      "role_id": "1"
     }
   ],
   "cart": [
@@ -614,25 +613,11 @@
       "added_at": "2024-03-14T10:45:00Z"
     },
     {
-      "id": "123b",
-      "user_id": "5",
-      "product_id": "2",
+      "id": "5fae",
+      "user_id": null,
+      "product_id": "1",
       "quantity": 1,
-      "added_at": "2025-03-24T11:53:49.121Z"
-    },
-    {
-      "id": "6938",
-      "user_id": "5",
-      "product_id": "5",
-      "quantity": 2,
-      "added_at": "2025-03-24T15:52:41.015Z"
-    },
-    {
-      "id": "0f53",
-      "user_id": "5",
-      "product_id": "19",
-      "quantity": 1,
-      "added_at": "2025-03-25T18:30:09.656Z"
+      "added_at": "2025-03-26T01:00:03.789Z"
     }
   ],
   "history": [

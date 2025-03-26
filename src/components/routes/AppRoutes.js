@@ -7,7 +7,6 @@ import Slider from "../carousel/Slider";
 import Category from "../Category/Category";
 import MainCarousel from "../maincarousel/maincarousel";
 import CategoryProducts from "../Category/CategoryProducts";
-import CartPage from "../pages/CartPage";
 import Login from "../login_signup/Login";
 import Register from "../login_signup/Register";
 import ProductDetail from "../product/ProductDetail";
@@ -19,6 +18,7 @@ import AccountManagement from "../account/AccountManagement";
 import AccountDetail from "../account/AccountDetail";
 import AccountCreate from "../account/AccountCreate";
 import OrderHistory from "../product/OrderHistory";
+import CartPage from "../../pages/CartPage";
 
 const AppRoutes = () => {
   const location = useLocation();
