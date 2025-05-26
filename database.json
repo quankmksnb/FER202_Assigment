@@ -441,7 +441,8 @@
       "address": "Ninh Bình, Việt Nam",
       "phone": "0889501529",
       "roles": [
-        "web-user"
+        "admin",
+        "saler"
       ],
       "roleIds": [
         1,
@@ -592,7 +593,17 @@
       "role_id": "4"
     },
     {
-      "id": "483f",
+      "id": "f3f7",
+      "user_id": "1",
+      "role_id": "1"
+    },
+    {
+      "id": "7e52",
+      "user_id": "1",
+      "role_id": "3"
+    },
+    {
+      "id": "13ad",
       "user_id": "1",
       "role_id": "1"
     }
@@ -618,6 +629,13 @@
       "product_id": "1",
       "quantity": 1,
       "added_at": "2025-03-26T01:00:03.789Z"
+    },
+    {
+      "id": "e1f6",
+      "user_id": null,
+      "product_id": "4",
+      "quantity": 1,
+      "added_at": "2025-04-28T16:56:24.802Z"
     }
   ],
   "history": [
